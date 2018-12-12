@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
     public static final String TAG_MINTEMP = "mintemp";
     public static final String TAG_ZIP = "zip";
    
-    //variables that will be intialized in on click and passed to the next activity
+    //variables that will be initialized in on click and passed to the next activity
     private String zip = "";
     private String id = "";
     private String currenttemp = "";
