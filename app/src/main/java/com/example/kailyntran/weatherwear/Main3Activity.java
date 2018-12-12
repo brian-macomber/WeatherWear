@@ -1,16 +1,15 @@
 package com.example.kailyntran.weatherwear;
 
 import android.app.Activity;
-import android.media.Image;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.widget.Toast;
 
 public class Main3Activity extends Activity {
-
+    
+    //Declares all text views that will be displayed 
     private TextView TextViewZip;
     private TextView TextViewCurrent;
     private TextView TextViewHigh;
@@ -28,7 +27,8 @@ public class Main3Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-
+        
+       
         String id = getIntent().getExtras().getString(Main2Activity.TAG_ID2);
         String zip = getIntent().getExtras().getString(Main2Activity.TAG_ZIP2);
         String currenttemp = getIntent().getExtras().getString(Main2Activity.TAG_CURRENTTEMP2);
@@ -60,13 +60,15 @@ public class Main3Activity extends Activity {
         initializePictures(id);
         displayClothes(id,maxtemp,checkarray);
     }
-
+    
+    //Initializes the TextViews for zip code, currenttemp, maxtemp, and mintemp 
     private void initializeTextViews(String zip, String currenttemp, String maxtemp, String mintemp) {
+        //converts temperatures from doubles in Kelvin units to ints in Fahrenheit unitds
         int newmaxtemp = (int) (((Double.parseDouble(maxtemp) - 273) * 9)/5) +32;
         int newmintemp = (int) (((Double.parseDouble(mintemp) - 273) * 9)/5) +32;
         int newcurrenttemp = (int) (((Double.parseDouble(currenttemp) - 273) * 9)/5) +32;
 
-
+        //converts values to strings so they can be put in the text view
         maxtemp = newmaxtemp + "";
         mintemp = newmintemp + "";
         currenttemp = newcurrenttemp + "";
@@ -76,14 +78,17 @@ public class Main3Activity extends Activity {
         TextViewHigh.setText(maxtemp);
         TextViewLow.setText(mintemp);
     }
+    
+    //initializes the image icon set for the category of weather based on the id based from the api
     private void initializePictures(String id){
+        //creates a new variable for id as a double
         double newid = Double.parseDouble(id);
         Integer images[] = {R.drawable.sunny, R.drawable.cloudy, R.drawable.rainy, R.drawable.snowy};
         String sunny = "Sunny";
         String cloudy = "Cloudy";
         String rainy = "Rainy";
         String snow = "Snow";
-
+        //sets image based on meaning gotten from openweathermap.org/api
         if (newid == 800) {
             TextViewWeather.setText(sunny);
             imageView.setImageResource(images[0]);
@@ -102,7 +107,10 @@ public class Main3Activity extends Activity {
         }
 
     }
+    
+    //This method selects which clothes to display and hyperlinks their text depending on whether they own the clothing recomended
     private void displayClothes(String id, String maxtemp, boolean checkarray[]){
+        //List of strings to hyperlink apparel if the user does not own that specific apparel
         String linkjeans = "<a href ='https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=jeans+&rh=i%3Aaps%2Ck%3Ajeans+'> Jeans </a>";
         String linkfalljacket = "<a href ='https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=fall+jacket'> Fall Jacket </a>";
         String linkrainboots = "<a href ='https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=rainboots&rh=i%3Aaps%2Ck%3Arainboots'> Rain Boots </a>";
@@ -118,14 +126,14 @@ public class Main3Activity extends Activity {
         String linkwinterjacket = "<a href ='https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Dfashion-mens&field-keywords=winter+jacket&rh=n%3A7147441011%2Ck%3Awinter+jacket'> Winter Jacket </a>";
 
 
-
+        //Initializes an array of images from the drawable folder
         Integer images[] = {R.drawable.falljacket, R.drawable.jeans, R.drawable.rainboots, R.drawable.rainjacket, R.drawable.sandals,
                 R.drawable.shorts, R.drawable.sneakers, R.drawable.sweatpants, R.drawable.sweater, R.drawable.sweatshirt, R.drawable.tshirt,
                 R.drawable.winterboots, R.drawable.winterjacket };
-
+        //parses the max temp of the day from a string to a double because this value will be used to recommend apparel
         double newmaxtemp = (((Double.parseDouble(maxtemp) - 273) * 9)/5) +32;
         int newid = Integer.parseInt(id);
-
+        
         String falljacket = "Fall Jacket"; //0
         String jeans = "Jeans"; //1
         String rainboots = "Rain Boots"; //2
@@ -139,8 +147,9 @@ public class Main3Activity extends Activity {
         String tshirt = "T-Shirt"; //10
         String winterboots = "Winter Boots"; //11
         String winterjacket = "Winter Jacket"; //12
-
-        if (newid == 800) { //SUNNY
+        
+        //This determines if the weather is sunny, and then recommends clothing based on if it is sunny as well the temperature
+        if (newid == 800) {
             if (newmaxtemp >= 65){
                 imageViewC1.setImageResource(images[10]);
                 imageViewC2.setImageResource(images[5]);
@@ -213,7 +222,8 @@ public class Main3Activity extends Activity {
             }
 
         }
-        else if ((newid > 700 && newid < 800) || newid > 800) { //cloudy
+        //This determines if the weather is cloudy, and then recommends clothing based on if it is cloudy as well the temperature
+        else if ((newid > 700 && newid < 800) || newid > 800) { //Cloudy
             imageViewC3.setImageResource(images[6]);
             if (checkarray[6] == false){
                 TextViewC3.setText(Html.fromHtml(linksneakers));
@@ -271,6 +281,7 @@ public class Main3Activity extends Activity {
                 }
             }
         }
+        //This determines if the weather is rainy, and then recommends clothing based on if it is rainy as well the temperature
         else if (newid >= 200 && newid < 600){ //rainy
             imageViewC1.setImageResource(images[3]);
             imageViewC3.setImageResource(images[2]);
@@ -316,6 +327,7 @@ public class Main3Activity extends Activity {
             }
 
         }
+        //This determines if the weather is snow, and then recommends clothing based on if it is snow as well the temperature
         else if(newmaxtemp <= 32) { //snow
             imageViewC1.setImageResource(images[12]);
             imageViewC3.setImageResource(images[11]);
