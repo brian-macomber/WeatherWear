@@ -14,6 +14,7 @@ public class Main2Activity extends Activity implements OnClickListener {
     private boolean checkarray[];
     private Button enter;
 
+    //creating tags for each variable to be passed to the next activity
     public static final String TAG_ID2 = "id";
     public static final String TAG_CURRENTTEMP2 = "currenttemp";
     public static final String TAG_MAXTEMP2 = "maxtemp";
@@ -25,9 +26,9 @@ public class Main2Activity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main2);
-
+        //declaring checkarray for checkboxes
         checkarray = new boolean[12];
-
+        
         enter = (Button) findViewById(R.id.enter);
 
         enter.setOnClickListener(this);
@@ -55,7 +56,7 @@ public class Main2Activity extends Activity implements OnClickListener {
         CheckBox checkBox_winter_boots= (CheckBox) findViewById(R.id.checkBox_winter_boots);
         CheckBox checkBox_winter_jacket= (CheckBox) findViewById(R.id.checkBox_winter_jacket);
 
-
+        //the checkarray will have boolean values corresponding to whether or not the checkbox is checked
         if (checkBox_fall_jacket.isChecked())
             checkarray[0]=true;
         if (checkBox_jeans.isChecked())
@@ -82,7 +83,7 @@ public class Main2Activity extends Activity implements OnClickListener {
             checkarray[11]=true;
         if (checkBox_winter_jacket.isChecked())
             checkarray[12]=true;
-
+            
         launchMain3Activity();
     }
 
@@ -94,7 +95,7 @@ public class Main2Activity extends Activity implements OnClickListener {
         String zip = getIntent().getExtras().getString(MainActivity.TAG_ZIP);
 
         Intent Main3Activity = new Intent(Main2Activity.this, Main3Activity.class);
-
+        //pass variables to next activity
         Main3Activity.putExtra(TAG_ID2, id);
         Main3Activity.putExtra(TAG_CURRENTTEMP2, currenttemp);
         Main3Activity.putExtra(TAG_MAXTEMP2, maxtemp);
