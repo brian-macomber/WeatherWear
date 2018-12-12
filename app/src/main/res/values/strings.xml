@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">WeatherWear</string>
+
+    <!--activity_main.xml Strings -->
+    <string name="enter_zipcode">Enter a US zipcode: </string>
+    <string name="enter">Enter</string>
+    <string name="weatherwear">WeatherWear</string>
+
+    <!-- Error Strings -->
+    <string name="error_et">Oops! Please enter a valid zip code.</string>
+
+    <!--activity_main2.xml Strings -->
+    <string name="select">Select the clothing items you own:</string>
+    <string name="shorts">Shorts </string>
+    <string name="sandals">Sandals </string>
+    <string name="sneakers">Sneakers </string>
+    <string name="fall_jacket">Fall jacket </string>
+    <string name="winter_boots">Winter boots </string>
+    <string name="rain_boots">Rain boots </string>
+    <string name="rain_jacket">Rain jackets </string>
+    <string name="winter_jacket">Winter jacket </string>
+    <string name="jeans">Jeans </string>
+    <string name="sweatpants">Sweatpants </string>
+    <string name="sweater">Sweater </string>
+    <string name="sweatshirt">Sweatshirt </string>
+    <string name="t_shirt">T-shirt </string>
+
+    <!--activity_main3.xml Strings -->
+    <string name="today">Today\'s weather for:</string>
+    <string name="suggested">Suggested clothing items:</string>
+    <string name="weather">Sunny</string>
+    <string name="hourly">Hourly weather</string>
+    <string name="degrees"> 79 </string>
+    <string name="current">Current: </string>
+    <string name="high">High: </string>
+    <string name="low">Low: </string>
+    <string name="items">(Items will be hyperlinked if you don\'t own them) </string>
+
+</resources>

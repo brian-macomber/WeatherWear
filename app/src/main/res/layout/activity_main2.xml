@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <CheckBox
+        android:id="@+id/checkBox_sandals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sandals"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_rain_jacket"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_rain_jacket" />
+
+    <CheckBox
+        android:id="@+id/checkBox_sneakers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:text="@string/sneakers"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_sweater"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_shorts" />
+
+    <CheckBox
+        android:id="@+id/checkBox_fall_jacket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="@string/fall_jacket"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="@+id/textView_select"
+        app:layout_constraintTop_toBottomOf="@+id/textView_select" />
+
+    <CheckBox
+        android:id="@+id/checkBox_winter_boots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/winter_boots"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_t_shirt" />
+
+    <CheckBox
+        android:id="@+id/checkBox_rain_boots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:text="@string/rain_boots"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_jeans" />
+
+    <CheckBox
+        android:id="@+id/checkBox_rain_jacket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rain_jacket"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_rain_boots"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_rain_boots" />
+
+    <CheckBox
+        android:id="@+id/checkBox_winter_jacket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/winter_jacket"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_winter_boots"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_winter_boots" />
+
+    <CheckBox
+        android:id="@+id/checkBox_jeans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jeans"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_fall_jacket"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_fall_jacket" />
+
+    <CheckBox
+        android:id="@+id/checkBox_sweatpants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sweatpants"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_sweater"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_sweater" />
+
+    <CheckBox
+        android:id="@+id/checkBox_sweater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/sweater"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_sneakers" />
+
+    <TextView
+        android:id="@+id/textView_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="74dp"
+        android:text="@string/select"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox_t_shirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/t_shirt"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_sweatshirt"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_sweatshirt" />
+
+    <CheckBox
+        android:id="@+id/checkBox_sweatshirt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:text="@string/sweatshirt"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_sweatpants"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_sweatpants" />
+
+    <Button
+        android:id="@+id/enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="27dp"
+        android:text="@string/enter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox_shorts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:text="@string/shorts"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_sneakers"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_sandals" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="189dp"
+        android:src="@drawable/raindeer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_rain_boots"
+        app:layout_constraintTop_toBottomOf="@+id/textView_select" />
+
+</android.support.constraint.ConstraintLayout>
