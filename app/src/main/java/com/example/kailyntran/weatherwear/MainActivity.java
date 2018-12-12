@@ -1,4 +1,3 @@
-
 package com.example.kailyntran.weatherwear;
 
 import android.content.Intent;
